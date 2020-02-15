@@ -1,11 +1,23 @@
 import { browser, by, element } from 'protractor';
 
-export class AppPage {
+export class LetslearnPage {
   navigateTo() {
-    return browser.get(browser.baseUrl) as Promise<any>;
+    return browser.get('/');
   }
 
   getTitleText() {
-    return element(by.css('app-root .content span')).getText() as Promise<string>;
+    return element(by.css('h1')).getText();
+  }
+
+  getPoints() {
+    return element(by.cssContainingText('div', 'Points')).$('span').getText();
+  }
+
+  getPlus1Button() {
+    return element(by.cssContainingText('button', 'Plus 1'));
+  }
+
+  getResetButton() {
+    return element(by.cssContainingText('button', 'Reset'));
   }
 }

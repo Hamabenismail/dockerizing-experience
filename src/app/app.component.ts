@@ -1,18 +1,19 @@
 import { Component } from '@angular/core';
-import {TranslateService} from '@ngx-translate/core';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'translationAPP';
-constructor(public translate:TranslateService){
-  translate.addLangs(['en','fr']);
-  translate.setDefaultLang('fr');
-  const browserLang= translate.getBrowserLang();
-  translate.use('fr');
-  
-}
+  title = 'Letslearn';
+  points = 1;
 
+  plus1() {
+    this.points++;
+  }
+
+  reset() {
+    this.points = 0;
+  }
 }
